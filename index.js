@@ -23,7 +23,7 @@ db.serialize(() => {
     });
 });
 
-function getUnavaliabeSeats(hall, socket) {
+function getAllSeats(hall, socket) {
      db.all(`SELECT seat FROM Hall${hall}`, (err, rows) => {
     if (err){
       throw err;
@@ -34,9 +34,6 @@ function getUnavaliabeSeats(hall, socket) {
   });
 }
 
-function requestSeat(){}
-
-getUnavaliabeSeats('101')
 
 app.get('/', (req, res) => {
     res.send('Hi from Codedamn')
